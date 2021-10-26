@@ -1,5 +1,6 @@
 import pygame
 
+
 class Player:
     position: tuple  # position of the bullet
     speed: tuple  # speed vector of the bullet

@@ -15,27 +15,27 @@ class Bullet():
     def __str__(self):
         return f"position: {self.position}, speed: {self.speed} damage: {self.damage}, bullet size: {self.size}, collisonN: {self.nCollisions}"
 
-    def update(self, mx, my):
+    def update(self, maxx, maxy):
         x, y = self.position
         sx, sy = self.speed
         px = x + sx
         py = y + sy
-        if mx is not None and my is not None:
+        if maxx is not None and maxy is not None:
             if px < 0:
                 self.nCollisions += 1
                 px = 0
                 self.speed = sx * -1, sy
-            if px > mx:
+            if px > maxx:
                 self.nCollisions += 1
-                px = mx
+                px = maxx
                 self.speed = sx * -1, sy
             if py < 0:
                 self.nCollisions += 1
                 py = 0
                 self.speed = sx, sy * -1
-            if py > my:
+            if py > maxy:
                 self.nCollisions += 1
-                py = my
+                py = maxy
                 self.speed = sx, sy * -1
         self.position = px, py
 
